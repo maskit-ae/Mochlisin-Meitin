@@ -1,7 +1,6 @@
 const gallery = document.getElementById("gallery");
 
 for (let i = 1; i <= 131; i++) {
-
     const file = images/mm${String(i).padStart(3, "0")}.JPG;
 
     const a = document.createElement("a");
