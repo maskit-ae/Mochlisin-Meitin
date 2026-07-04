@@ -1,32 +1,13 @@
-<!DOCTYPE html>
-<html lang="id">
+const gallery = document.getElementById("gallery");
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+for (let i = 1; i <= 131; i++) {
+    const nomor = String(i).padStart(3, "0");
+    const file = "images/mm" + nomor + ".JPG";
 
-<title>Mochlisin & Meitin Wedding</title>
+    const img = document.createElement("img");
+    img.src = file;
+    img.loading = "lazy";
+    img.alt = "Foto " + i;
 
-<link rel="stylesheet" href="style.css">
-
-<link rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/lightgallery@2.8.1/css/lightgallery-bundle.min.css">
-
-</head>
-
-<body>
-
-<header class="hero">
-    <h1 id="title">Mochlisin & Meitin</h1>
-    <p id="subtitle">Wedding Gallery</p>
-</header>
-
-<div id="gallery" class="gallery"></div>
-
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.8.1/lightgallery.min.js"></script>
-
-<script src="script.js"></script>
-
-</body>
-
-</html>
+    gallery.appendChild(img);
+}
