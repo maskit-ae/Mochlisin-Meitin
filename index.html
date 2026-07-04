@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Wedding Gallery</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mochlisin & Meitin Wedding</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -14,44 +14,15 @@
 <body>
 
 <header class="hero">
-    <h1 id="title">Wedding Gallery</h1>
-    <p id="subtitle"></p>
+    <h1>Mochlisin & Meitin</h1>
+    <p>Wedding Gallery</p>
 </header>
 
 <div id="gallery" class="gallery"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.8.1/lightgallery.min.js"></script>
 
-<script>
-
-fetch("config.json")
-.then(r=>r.json())
-.then(cfg=>{
-
-    document.getElementById("title").textContent=cfg.title;
-    document.getElementById("subtitle").textContent=cfg.date;
-
-    const gallery=document.getElementById("gallery");
-
-    for(let i=1;i<=131;i++){
-
-        const file=images/mm (${i}).JPG;
-
-        gallery.innerHTML+=
-        <a href="${file}">
-            <img loading="lazy" src="${file}" alt="">
-        </a>
-        ;
-
-    }
-
-    lightGallery(gallery,{
-        selector:"a"
-    });
-
-});
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
