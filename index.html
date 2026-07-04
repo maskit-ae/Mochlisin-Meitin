@@ -1,24 +1,57 @@
 <!doctype html>
-<html lang="id"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Wedding Gallery</title>
+
 <link rel="stylesheet" href="style.css">
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.8.1/css/lightgallery-bundle.min.css">
-</head><body>
+
+</head>
+
+<body>
+
 <header class="hero">
-<h1 id="title">Wedding Gallery</h1>
-<p id="subtitle"></p>
+    <h1 id="title">Wedding Gallery</h1>
+    <p id="subtitle"></p>
 </header>
+
 <div id="gallery" class="gallery"></div>
+
 <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.8.1/lightgallery.min.js"></script>
+
 <script>
-Promise.all([fetch('config.json').then(r=>r.json()),fetch('gallery.json').then(r=>r.json())]).then(([cfg,list])=>{
-title.textContent=cfg.title;
-subtitle.textContent=cfg.date;
-const g=document.getElementById('gallery');
-list.forEach(f=>{
-g.insertAdjacentHTML('beforeend',`<a href="images/${f}"><img loading="lazy" src="images/${f}"></a>`);
+
+fetch("config.json")
+.then(r=>r.json())
+.then(cfg=>{
+
+    document.getElementById("title").textContent=cfg.title;
+    document.getElementById("subtitle").textContent=cfg.date;
+
+    const gallery=document.getElementById("gallery");
+
+    for(let i=1;i<=131;i++){
+
+        const file=images/mm (${i}).JPG;
+
+        gallery.innerHTML+=
+        <a href="${file}">
+            <img loading="lazy" src="${file}" alt="">
+        </a>
+        ;
+
+    }
+
+    lightGallery(gallery,{
+        selector:"a"
+    });
+
 });
-lightGallery(g,{selector:'a'});
-});
-</script></body></html>
+
+</script>
+
+</body>
+</html>
