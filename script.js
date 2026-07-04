@@ -2,19 +2,20 @@ const gallery = document.getElementById("gallery");
 
 for (let i = 1; i <= 131; i++) {
 
+    const file = images/mm${String(i).padStart(3,"0")}.JPG;
+
     const a = document.createElement("a");
-    a.href = images/mm (${i}).JPG;
+    a.href = file;
 
     const img = document.createElement("img");
-    img.src = images/mm (${i}).JPG;
+    img.src = file;
     img.loading = "lazy";
-    img.alt = Photo ${i};
+    img.alt = "";
 
     a.appendChild(img);
-
     gallery.appendChild(a);
 }
 
-lightGallery(gallery, {
-    selector: "a"
+lightGallery(gallery,{
+    selector:"a"
 });
